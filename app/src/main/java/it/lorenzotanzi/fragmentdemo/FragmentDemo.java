@@ -21,24 +21,11 @@ public class FragmentDemo extends AppCompatActivity  implements Fragment2.Fragme
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment_demo);
-        createFragments();
 
-
-        final Intent intent = getIntent();
-        //if (savedInstanceState == null){
-        //getSupportFragmentManager().beginTransaction().add(R.id.fragment_1, new Fragment1()).commit();
-        //getSupportFragmentManager().beginTransaction().add(R.id.fragment_2, new Fragment2()).commit();
-        //}
-    }
-
-    private void createFragments() {
-        fragment1 = new Fragment1();
-        fragment2 = new Fragment2();
-        FragmentManager mFragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.fragment_1, fragment1);
-        fragmentTransaction.add(R.id.fragment_2, fragment2);
-        fragmentTransaction.commit();
+        if (savedInstanceState == null){
+        getSupportFragmentManager().beginTransaction().add(R.id.fragment_1, new Fragment1()).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.fragment_2, new Fragment2()).commit();
+        }
     }
 
     @Override
@@ -60,7 +47,7 @@ public class FragmentDemo extends AppCompatActivity  implements Fragment2.Fragme
 
     @Override
     public void onFragment1Button2Clicked() {
-        Log.d("F1B2", "Button 1 of Fragment 1 clicked");
+        Log.d("F1B2", "Button 2 of Fragment 1 clicked");
     }
 }
 
