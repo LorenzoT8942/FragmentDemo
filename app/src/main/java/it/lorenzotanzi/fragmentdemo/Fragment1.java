@@ -11,30 +11,29 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
+//import android.widget.TextView;
 
 
 public class Fragment1 extends Fragment implements View.OnClickListener{
 
-     Fragment1Listener activityCallback;
-     private Button btn_1;
-     private Button btn_2;
-     private TextView tv_text;
+     private Fragment1Listener activityCallback;
+
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_1, container, false);
-        tv_text = (TextView) view.findViewById(R.id.tv_text);
-        btn_1 = (Button) view.findViewById(R.id.btn_1);
-        btn_2 = (Button) view.findViewById(R.id.btn_2);
+        //TextView tv_text =  view.findViewById(R.id.tv_text);
+        Button btn_1 =  view.findViewById(R.id.btn_1);
+        Button btn_2 =  view.findViewById(R.id.btn_2);
 
         btn_1.setOnClickListener(this);
+        btn_2.setOnClickListener(this);
         return view;
     }
 
     @Override
-    public void onAttach(Context context){
+    public void onAttach(@NonNull Context context){
         super.onAttach(context);
 
         try{
@@ -51,9 +50,9 @@ public class Fragment1 extends Fragment implements View.OnClickListener{
     }
 
     public interface Fragment1Listener {
-        public void onFragment1Button1Clicked();
+         void onFragment1Button1Clicked();
 
-        public void onFragment1Button2Clicked();
+         void onFragment1Button2Clicked();
     }
 
     @Override
