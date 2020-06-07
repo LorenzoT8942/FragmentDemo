@@ -1,20 +1,13 @@
 package it.lorenzotanzi.fragmentdemo;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
+
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Button;
-import android.widget.ScrollView;
+
 
 public class FragmentDemo extends AppCompatActivity  implements Fragment2.Fragment2Listener, Fragment1.Fragment1Listener {
-
-    Fragment1 fragment1;
-    Fragment2 fragment2;
 
 
     @Override
@@ -22,10 +15,12 @@ public class FragmentDemo extends AppCompatActivity  implements Fragment2.Fragme
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment_demo);
 
+
         if (savedInstanceState == null){
         getSupportFragmentManager().beginTransaction().add(R.id.fragment_1, new Fragment1()).commit();
         getSupportFragmentManager().beginTransaction().add(R.id.fragment_2, new Fragment2()).commit();
         }
+
     }
 
     @Override
